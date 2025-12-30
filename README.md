@@ -1,24 +1,34 @@
+## About
+
 https://ruby-on-rails-buildeployship.onrender.com/
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
+- Ruby version
+- System dependencies
+- Configuration
+- Database creation
+- Database initialization
+- How to run the test suite
+- Services (job queues, cache servers, search engines, etc.)
+- Deployment instructions
 
-Things you may want to cover:
+## Architecture
+- Web Service: Render (Ruby/Rails)
+- Database: PostgreSQL 18 (Render)
+- Region: Virginia (US East)
 
-* Ruby version
+## Environment Variables
+| Variable | Description |
+|----------|-------------|
+| DATABASE_URL | PostgreSQL connection string |
+| RAILS_MASTER_KEY | Decrypts credentials |
 
-* System dependencies
+## Deployment
+Automatic deploys on push to `main` branch via Render.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Troubleshooting
+- SQLite doesn't work on cloud platforms due to ephemeral filesystems
+- The `cable` database config is required for Action Cable in Rails 8
+- Environment variables link separate services (web + database)
+- Build commands can run migrations: `bundle exec rake db:migrate`
